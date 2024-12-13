@@ -1,4 +1,4 @@
-# Crzgames - ProxyInverse Cluster K3S
+# Flapi - Cluster K3s - Proxy Inverse
 
 ## ⚙️ Setup Environment
 1. Connect to the NODE MASTER in Cluster K3S.
