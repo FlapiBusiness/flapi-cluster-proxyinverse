@@ -58,7 +58,7 @@ controller:
     labels: {}
     clusterIP: ""
     # Lorsque le externalTrafficPolicy est à Local, le service est accessible uniquement depuis le noeud worker qui reçoit la requête
-    externalTrafficPolicy: "Local" # Local or Cluster
+    externalTrafficPolicy: "Cluster" # Local or Cluster
 
   config:
     use-forwarded-headers: "true"
@@ -66,15 +66,6 @@ controller:
     # Cela est appliquer aux pods du noeud worker qui reçoit la requête
     # Utilise ip_hash pour que les requêtes d'un même client soient toujours envoyées au même pod du noeud worker (notamment pour serveur de jeu)
     load-balance: "round_robin" # round_robin, least_conn, ip_hash
-    
-tcp:
-  4222: "staging-nats/staging-nats-crzcommon-service:4222"
-  4223: "prod-nats/prod-nats-crzcommon-service:4223"
-
-udp:
-  32000: "staging-worldserver-seatyrants/staging-worldserver-seatyrants-service-server1:32000"
-  32001: "staging-worldserver-seatyrants/staging-worldserver-seatyrants-service-testprivate:32001"
-  32002: "staging-worldserver-seatyrants/staging-worldserver-seatyrants-service-testpublic:32002"
 
 defaultBackend:
   enabled: true
