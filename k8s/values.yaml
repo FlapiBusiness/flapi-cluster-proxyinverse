@@ -26,20 +26,19 @@ controller:
     failureThreshold: 2 # Le nombre de fois que la vérification doit échouer avant que le pod ne soit considéré comme non fonctionnel
     successThreshold: 1 # Le nombre de fois que la vérification doit réussir avant que le pod ne soit considéré comme fonctionnel
 
-  replicaCount: 6
   autoscaling:
     enabled: true
-    minReplicas: 6
-    maxReplicas: 25
+    minReplicas: 2
+    maxReplicas: 6
     targetCPUUtilizationPercentage: 70
     targetMemoryUtilizationPercentage: 70
   resources:
     requests:
-      cpu: 2
-      memory: 2Gi
+      cpu: 300m
+      memory: 512Mi
     limits:
-      cpu: 3
-      memory: 3Gi
+      cpu: 600m
+      memory: 1024Mi
 
   affinity:
     podAntiAffinity:
