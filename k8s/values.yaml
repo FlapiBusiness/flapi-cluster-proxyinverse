@@ -66,5 +66,8 @@ controller:
     # Utilise ip_hash pour que les requêtes d'un même client soient toujours envoyées au même pod du noeud worker (notamment pour serveur de jeu)
     load-balance: "round_robin" # round_robin, least_conn, ip_hash
 
+tcp:
+  4222: "dev-hub-nats-flapi/dev-hub-nats-flapi-service:4222"
+  
 defaultBackend:
   enabled: true
