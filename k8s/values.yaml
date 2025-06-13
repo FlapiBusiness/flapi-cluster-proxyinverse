@@ -68,6 +68,8 @@ controller:
 
 tcp:
   4222: "dev-hub-nats-flapi/dev-hub-nats-flapi-service:4222"
+  4223: "staging-hub-nats-flapi/staging-hub-nats-flapi-service:4223"
+  4224: "prod-hub-nats-flapi/prod-hub-nats-flapi-service:4224"
   
 defaultBackend:
   enabled: true
